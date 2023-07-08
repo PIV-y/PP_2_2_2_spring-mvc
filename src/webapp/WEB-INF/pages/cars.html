@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Cars List</h1>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Cabin Type</th>
+      <th>Serial Number</th>
+    </tr>
+    <tr th:each="carList, state:${carList}">
+      <td th:utext="${state.current.getName()}">Name</td>
+      <td th:utext="${state.current.getCabinType()}">Cabin Type</td>
+      <td th:utext="${state.current.getSerialNumber()}">Serial Number</td>
+    </tr>
+  </table>
+</body>
+</html>
